@@ -62,7 +62,7 @@ st.write(
 
 # Formulario de entrada centrado
 with st.form("parametros"):
-    capital_disponible = st.number_input("Capital disponible ($)", min_value=1.0, step=1.0, key="capital_disponible")
+    capital_disponible = st.number_input("Capital disponible ($)", min_value=5.0, step=1.0, key="capital_disponible")
     riesgo_asumido_porcentaje = st.number_input("Riesgo máximo asumido (sobre el capital disponible) (%)", min_value=1.0, max_value=100.0, step=0.1, key="riesgo_asumido")
     
     # Cuadros de entrada diferenciados para TP y SL con etiquetas personalizadas
@@ -87,7 +87,7 @@ if calcular:
     max_risk = capital_disponible * (riesgo_asumido_porcentaje / 100)
     
     # Rango de valores para capital y apalancamiento
-    capital_values = np.arange(1, capital_disponible + 1, 1)  # Capital entre $1 y el capital disponible
+    capital_values = np.arange(5, capital_disponible + 1, 1)  # Capital entre $1 y el capital disponible
     apalancamiento_values = np.arange(1, 101, 1)  # Apalancamiento de 1 a 100
     
     # Lista para guardar resultados
